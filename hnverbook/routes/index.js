@@ -132,7 +132,6 @@ indexRouter.get('/profile/:username', verifyUser, async function(req, res, next)
       });
    }
 });
-
 indexRouter.post('/observeState/:username', async function(req, res, next) {
    const token = req.cookies.accessToken;
 

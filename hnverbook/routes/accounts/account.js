@@ -8,10 +8,10 @@ import {
    loginUser,
    refreshAccessToken,
    verifyEmail
-} from '../controllers/user.controller.js';
+} from '../../controllers/user.controller.js';
 import {
    sendVerificationEmail
-} from '../utils/resetPasswordEmail.js';
+} from '../../utils/resetPasswordEmail.js';
 
 import {
    Sequelize,
@@ -19,24 +19,24 @@ import {
 } from 'sequelize';
 import {
    getUserPosts
-} from '../controllers/orderPosts.controller.js';
+} from '../../controllers/orderPosts.controller.js';
 
 import {
    verifyUser
-} from '../middlewares/authenticate.js';
+} from '../../middlewares/authenticate.js';
 
 import {
    User
-} from '../models/user.js';
+} from '../../models/user.js';
 import {
    Posts
-} from '../models/posts.js';
+} from '../../models/posts.js';
 import {
    Blip
-} from '../models/postType.js';
+} from '../../models/postType.js';
 import {
    Observer
-} from '../models/observer.js';
+} from '../../models/observer.js';
 
 const accessTokenSecret = process.env.ACCESS_TOKEN;
 const refreshTokenSecret = process.env.REFRESH_TOKEN;

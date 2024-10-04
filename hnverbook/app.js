@@ -14,9 +14,9 @@ import {
 } from './utils/APIError.js';
 
 import indexRouter from './routes/index.js';
-import authRouter from './routes/auth.js';
+import authRouter from './routes/accounts/auth.js';
+import accountRouter from './routes/accounts/account.js';
 import iconRouter from './routes/icons.js';
-import accountRouter from './routes/account.js';
 import postsRouter from './routes/posts.js';
 import settingsRouter from './routes/settings.js';
 import exploreRouter from './routes/explore.js';

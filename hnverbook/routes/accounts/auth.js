@@ -6,21 +6,21 @@ import {
    refreshAccessToken,
    verifyEmail,
    updateProfile
-} from '../controllers/user.controller.js';
+} from '../../controllers/user.controller.js';
 import jwt from 'jsonwebtoken';
 import "dotenv/config.js";
 import {
    authCheckLogin,
    authCheckSignUp
-} from '../middlewares/authenticate.js';
+} from '../../middlewares/authenticate.js';
 
 import {
    sendVerificationEmail
-} from '../utils/sendEmailVerification.js';
+} from '../../utils/sendEmailVerification.js';
 
 import {
    User
-} from '../models/user.js';
+} from '../../models/user.js';
 
 const accessTokenSecret = process.env.ACCESS_TOKEN;
 const refreshTokenSecret = process.env.REFRESH_TOKEN;

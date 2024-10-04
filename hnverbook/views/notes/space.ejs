@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title><%= title %></title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <% if (theme === 'dark') {
+      %>
+      <link rel="stylesheet" href="/stylesheets/dark.css">
+      <%
+   } else {
+      %>
+      <link rel="stylesheet" href="/stylesheets/light.css">
+      <%
+   } %>
+   <link rel='stylesheet' href='/stylesheets/style.css' />
+<link rel='stylesheet' href='/stylesheets/notes/space.css' />
+<%- include('../partials/head') %>
+   <script src="/scripts/index.js" type="module"></script>
+   <script src="/scripts/notes/space.js" type="module"></script>
+</head>
+<body>
+
+<% if (edit) {%>
+<%- include('../partials/header', {
+theme, title: null, leftIcon: null, click: null, titleClick: null, rightButtons: [
+   { icon: 'Trash 2', url: 'javascript:void(0)', click: "deleteSpace()", size: 'small'},
+   { icon: 'Arrow Left Square', url: 'javascript:void(0)', click: 'window.history.go(-1)', size: 'small'}
+]}) %>
+<% } else { %>
+<%- include('../partials/header', {
+theme, title: null, leftIcon: null, click: null, titleClick: null, rightButtons: [
+   { icon: 'Arrow Left Square', url: 'javascript:void(0)', click: 'window.history.go(-1)', size: 'normal'}
+]}) %>
+<% } %>
+
+<div id="app" class="app">
+<div id="screen" class="screen">
+<h2 class="greet"><%= edit ? 'Edit Space ✷' : 'Create A New Space ✷'%></h2>
+  <%- include('../partials/errorMessage') %>
+  
+<form id="<%= edit ? 'updateSpace' : 'createSpace'%>" target="_blank" method="post">
+  <label for="color">Space Color:</label>
+  <input type="color" id="color" name="color" value="<%= edit ? space.color : '#3647dd'%>">
+  <textarea id="title" name="title" placeholder="Enter title for your space..." maxlength="24" required><%= edit ? space.title : ''%></textarea>
+  <textarea id="description" name="description" placeholder="Enter description for your space..." rows="auto" cols="auto" maxlength="75"><%= edit ? space.description : ''%></textarea>
+  <input type="submit" id="createSpaceBtn" value="<%= edit ? 'UPDATE —>' : 'CREATE —>'%>">
+</form>
+</div>
+</div>
+
+</body>
+</html>

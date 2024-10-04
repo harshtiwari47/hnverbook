@@ -1,0 +1,28 @@
+<html>
+   <head>
+      <title>404 Error | Page Not Found</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link rel='stylesheet' href='/stylesheets/style.css' />
+  
+   <style>
+      * {
+         padding: 0;
+         margin: 0;
+      }
+      .screen {
+         padding: 4dvw 8dvw 4dvw 8dvw;
+      }
+   </style>
+  
+   </head>
+   <body>
+<%- include('partials/header', {
+theme: 'dbe1e8', title: null, leftIcon: null, click: null, titleClick: null, rightButtons: []
+}) %>
+   <div id="screen" class="screen">
+   <p>
+      <%= message %>
+   </p>
+   </div>
+   </body>
+</html>

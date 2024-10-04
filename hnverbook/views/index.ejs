@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <% if (theme === 'dark') { %>
+    <link rel="stylesheet" href="/stylesheets/dark.css">
+ <% } else { %>
+    <link rel="stylesheet" href="/stylesheets/light.css">
+ <% } %>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/home.css' />
+    <%- include('partials/head') %>
+   <script src="/scripts/index.js" defer type="module"></script>
+</head>
+ <body>
+    
+<%- include('partials/header', {
+theme, title: null, leftIcon: null, click: null, titleClick: null, rightButtons: [
+   { icon: 'User Circle', url: '/account', click: null, size: 'normal'}
+]}) %>
+ 
+   <div id="app" class="app">
+      <div id="screen" class="screen">
+         <h2 class="greet">Welcome, <%= user.username %>!</h2>
+      </div>
+      <%- include('partials/navigation', {theme, active: 'home'}) %>
+   </div>
+   
+  </body>
+</html>

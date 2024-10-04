@@ -1,0 +1,13 @@
+.app {}
+.screen {
+   padding: 2dvw 8dvw calc(4dvw + 4rem) 8dvw;
+   background: linear-gradient(to bottom, var(--primaryColor), var(--primaryColorSec));
+   min-height: calc(100vh - 6dvw - 4rem);
+   box-sizing: border-box;
+}
+.screen h2.greet {
+   font-size: var(--fontSizeMedium);
+   padding: 2vh 0;
+   font-family: 'Syne';
+   color: var(--primaryTextColorBright);
+}

@@ -1,0 +1,22 @@
+:root {
+   --primaryColor: #eaebef;
+   --primaryTextColor: #2a4180;
+   --primaryTextColorSec: #2b486d;
+   --primaryColorSec: #e3e9f8;
+   --primaryColorLight: #d5dbed;
+   --primaryColorDark: #ffffff;
+   --primaryTextColorBright: #0c0c0f;
+   --warningColor: #eba9a9;
+   --successColor: #09a519;
+   --successColorBG: #66ff7526;
+   --warningColorBG: #eba9a98c;
+   --primaryColorHot: #a1acc8a8;
+   --secondaryColor: #ea3f3f;
+   --tertiaryColor: #6768ea;
+   --tertiaryColorDark: #aebcf7;
+   --fontSizeSmall: calc(70% + .6vw);
+   --fontSizeNormal: calc(90% + .6vw);
+   --fontSizeInput: calc(110% + .6vw);
+   --fontSizeMedium: calc(130% + .6vw);
+   --fontSizeLarger: calc(150% + .6vw);
+}

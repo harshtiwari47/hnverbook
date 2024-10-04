@@ -1,0 +1,75 @@
+.screen {
+   padding: 2dvw 8dvw 4dvw 8dvw;
+   background: linear-gradient(to bottom, var(--primaryColor), var(--primaryColorSec));
+   min-height: calc(100vh - 6dvw - 4rem);
+   box-sizing: border-box;
+}
+
+h2 {
+   font-size: var(--fontSizeMedium);
+   padding: 2vh 0;
+   font-family: 'Syne';
+   color: var(--primaryTextColorBright);
+}
+
+form {
+   padding: 1.4rem 0;
+}
+
+form label {
+   font-family: 'Syne';
+   font-style: italic;
+   color: var(--primaryTextColorSec);
+   font-size: calc(var(--fontSizeSmall) + 24%);
+}
+
+form select {
+   display: block;
+   border: 0;
+   border-bottom: 1px solid var(--primaryColorHot);
+   background: #00000000;
+   font-size: var(--fontSizeMedium);
+   padding: 1em;
+   margin: 2vh 0;
+   font-family: 'Syne';
+   color: var(--primaryTextColorBright);
+}
+textarea {
+   all: unset;
+   font-family: 'Syne';
+   width: 100%;
+   white-space: normal;
+   overflow-wrap: break-word;
+   box-sizing: border-box;
+   display: block;
+   margin: 1rem 0 2rem 0;
+   padding: 1rem;
+   font-size: var(--fontSizeInput);
+   background: var(--primaryColorLight);
+   color: var(--primaryTextColorBright);
+}
+textarea::placeholder {
+   color: var(--primaryTextColor);
+}
+form input[type="color"] {
+   all: unset;
+   width: 2.5em;
+   height: 2.5em;
+   margin-left: 2.5em;
+   border-radius: 1em;
+}
+form input[type="submit"] {
+   all: unset;
+   font-family: 'Syne';
+   box-sizing: border-box;
+   display: inline-block;
+   place-items: center;
+   text-align: center;
+   font-weight: 800;
+   color: var(--primaryTextColorBright);
+   font-size: var(--fontSizeInput);
+   margin: 2rem 0;
+   padding: 1rem;
+   border-bottom: 2px solid var(--tertiaryColor);
+   float: right;
+}

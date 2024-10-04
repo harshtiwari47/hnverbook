@@ -1,0 +1,28 @@
+<% const themeColor = theme === 'light' ? '171b20': 'dbe1e8'%>
+
+<header class="main">
+   <div class="left">
+      <% if (!leftIcon) { %>
+         <img src="/icon/hnverbook-small.png" width="30" height="30" alt="HnverBook Logo">
+      <% } else { %>
+         <img src="/icon/stroke/<%= leftIcon %>/<%= themeColor %>/36/1.5" 
+              <%- click ? `onclick="${click}"` : '' %> 
+              width="30" height="30" alt="<%= leftIcon %>">
+      <% } %>
+      <h1>
+         <a href="<%= titleClick ? titleClick : '/' %>">
+            <%= title ? title : "Hnverbook" %>
+         </a>
+      </h1>
+   </div>
+   
+   <div class="right">
+      <% rightButtons.forEach((value, index) => { %>
+         <a href="<%= value.url %>" <%- value.click ? `onclick="${value.click}"` : '' %>>
+            <img src="/icon/stroke/<%= value.icon %>/<%= themeColor %>/36/1.5" 
+                 alt="<%= value.icon %>" 
+                 <%- value.size ? `class="${value.size}"` : '' %>>
+         </a>
+      <% }) %>
+   </div>
+</header>

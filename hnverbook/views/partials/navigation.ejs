@@ -1,0 +1,9 @@
+  <% let themeColor = theme === 'light' ? '171b20' : 'dbe1e8'; %>
+   <div id="navigation" class="navigation">
+      <ul>
+         <li  <%- active === 'home' ? "class='active'" : '' %>><a href="/"><img src="/icon/stroke/Home 2/<%= themeColor %>/36/1.5" alt="HOME"></a></li>
+         <li  <%- active === 'explore' ? "class='active'" : '' %>><a href="/explore"><img src="/icon/stroke/Box 3D/<%= themeColor %>/36/1.5" alt="HOME"></a></li>
+         <li  <%- active === 'create' ? "class='active'" : '' %>><a href="/create"><img src="/icon/stroke/Plus Square/<%= themeColor %>/36/1.5" alt="PUBLISH"></a></li>
+         <li  <%- active === 'notes' ? "class='active'" : '' %>><a href="/notes"><img src="/icon/stroke/Note With Text/<%= themeColor %>/36/1.5" alt="NOTES"></a></li>
+      </ul>
+   </div>

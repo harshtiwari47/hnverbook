@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title><%= title %></title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <% if (theme === 'dark') { %>
+         <link rel="stylesheet" href="../stylesheets/dark.css">
+         <% } else { %>
+            <link rel="stylesheet" href="../stylesheets/light.css">
+            <% } %>
+               <link rel='stylesheet' href='../stylesheets/style.css' />
+            <link rel='stylesheet' href='../stylesheets/authentication.css' />
+         <%- include('../partials/head') %>
+         </head>
+         <body>
+            <%- include('../partials/headerPages') %>
+               <div class="app">
+                  <div class="leftBar">
+                     <h2>VERIFY YOUR EMAIL</h2>
+                     <p>
+                        Please verify your email to continue further. If you haven't received any email yet, you can request a new verification email!
+                     </p>
+                     <button id="send" class="blue">
+                        SEND EMAIL
+                     </button>
+                     <p id="message" class="message"></p>
+                  </div>
+                  <script>
+                     class Verification {
+                        #verificationStatus = 'failed';
+                        #timer = null;
+                        #messElement = undefined;
+
+                        constructor() {
+                           this.#messElement = document.getElementById('message');
+                           document.getElementById('send').addEventListener('click', (ev) => {
+                              ev.preventDefault();
+                              if (this.#timer === null) {
+                                 this.verificationCode();
+                              } else {
+                                 this.#messElement.innerText = "Please wait at least 10 seconds to request a new one!";
+                              }
+                           });
+                        }
+
+                        verificationCode() {
+                           this.#timer = 'wait';
+                           setTimeout(() => {
+                              this.#timer = null;
+                           },
+                              10000);
+
+                           fetch('../auth/requestVerification',
+                              {
+                                 method: 'POST',
+                                 headers: {
+                                    'Content-Type': 'application/json'
+                                 },
+                                 credentials: 'include'
+                              })
+                           .then(response => {
+                              if (!response.ok) {
+                                 throw new Error('Network response was not ok');
+                              }
+                              this.#messElement.innerText = "New verification link has been sent to your email. Once you verify, you'll be redirected, or you can try refreshing the page.";
+                           })
+                           .catch(() => {
+                              this.#messElement.innerText = "New verification link failed to send to your email";
+                           });
+                        }
+                     }
+
+                     document.addEventListener("DOMContentLoaded", () => {
+                        let verification = new Verification();
+                     });
+                  </script>
+               </body>
+            </html>

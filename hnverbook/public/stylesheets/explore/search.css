@@ -1,0 +1,105 @@
+.screen {
+   padding: 6dvw 8dvw calc(4dvw + 4rem) 8dvw;
+   background: linear-gradient(to bottom, var(--primaryColor), var(--primaryColorSec));
+   min-height: calc(100vh - 6dvw - 4rem);
+   box-sizing: border-box;
+   overflow-y: scroll;
+   height: 100vh;
+}
+
+.layout-top {
+   display: grid;
+   place-items: center;
+}
+
+.searchbar {
+   display: flex;
+   padding: 1em 1.5em;
+   align-items: center;
+   gap: 1em;
+   box-sizing: border-box;
+   border-bottom: 2px solid var(--primaryTextColorBright);
+   border-radius: 1em;
+   width: 80vw;
+   max-width: 600px;
+}
+.layout-top .searchbar p {
+   font-size: calc(var(--fontSizeInput) - 5%);
+   color: var(--primaryTextColor);
+   font-family: 'Syne';
+   font-style: italic;
+   font-weight: 500;
+   word-wrap: nowrap;
+}
+
+input[type="text"] {
+   all: unset;
+   font-family: 'Syne';
+   width: 100%;
+   box-sizing: border-box;
+   display: block;
+   margin: 0;
+   padding: .5rem 1rem;
+   border-radius: 1em;
+   font-size: var(--fontSizeInput);
+   background: var(--primaryColorLight);
+   color: var(--primaryTextColorBright);
+}
+input::placeholder {
+   color: var(--primaryTextColor);
+}
+.item {
+   padding: .5em;
+   margin: 0 0 1em 0;
+}
+.results {
+   padding: 8dvw 0;
+}
+.user {
+   display: flex;
+   align-items: center;
+   gap: 1em;
+   height: 4rem;
+   padding: .5em 1em;
+   border-radius: 0.25em;
+   border-bottom: 1px solid var(--primaryColorHot);
+}
+.user:hover {
+   background: linear-gradient(to right, var(--primaryColorDark), #646fc219);
+}
+.user .userProfile {
+   width: 3em;
+   height: 3em;
+   border-radius: 100%;
+   background: #000;
+}
+.user .userInfo {}
+.user .userInfo .name {
+   color: var(--primaryTextColorBright);
+   font-size: calc(var(--fontSizeNormal));
+   font-weight: 700;
+   margin-bottom: .3em;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+}
+.user .userInfo .username {
+   font-family: 'Syne';
+   font-size: var(--fontSizeNormal);
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+}
+.user .bottomDetails {
+   display: flex;
+   align-items: center;
+   gap: .25em;
+}
+.resultMessage {
+   font-family: 'Syne';
+   font-size: var(--fontSizeMedium);
+   padding: 1em 1.5em;
+   box-sizing: border-box;
+   line-height: 1.5;
+   color: var(--primaryTextColorSec);
+}

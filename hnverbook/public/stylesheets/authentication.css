@@ -1,0 +1,150 @@
+header {
+   display: flex;
+   align-items: center;
+   gap: 2dvw;
+   padding: 1dvw 8dvw;
+   height: 4rem;
+   border-bottom: 1px solid var(--primaryColorHot);
+}
+.app {
+   padding: 2dvw 8dvw 4dvw 8dvw;
+   background: linear-gradient(to bottom, var(--primaryColor), var(--primaryColorSec));
+   min-height: calc(100vh - 6dvw - 4rem);
+   box-sizing: border-box;
+}
+h1 {
+   font-size: var(--fontSizeLarger);
+}
+h2 {
+   font-size: var(--fontSizeMedium);
+   padding: 4vh 0;
+   font-family: 'Syne';
+   color: var(--primaryTextColorBright);
+}
+p {
+   font-size: var(--fontSizeNormal);
+   padding: 0 0 6vh 0;
+   line-height: 1.45;
+}
+form {
+   padding: 1.4rem 0;
+}
+form label {
+   font-family: 'Syne';
+   font-style: italic;
+   color: var(--primaryTextColorSec);
+   font-size: calc(var(--fontSizeSmall) + 4%);
+}
+form input[type="text"],form input[type="email"], form input[type="password"] {
+   all: unset;
+   font-family: 'Syne';
+   width: 100%;
+   box-sizing: border-box;
+   display: block;
+   margin: 1rem 0 2rem 0;
+   padding: 1rem;
+   font-size: var(--fontSizeInput);
+   background: var(--primaryColorLight);
+   color: var(--primaryTextColorBright);
+}
+form input::placeholder {
+   color: var(--primaryTextColor);
+}
+form input[type="submit"] {
+   all: unset;
+   font-family: 'Syne';
+   box-sizing: border-box;
+   display: grid;
+   place-items: center;
+   text-align: center;
+   width: 100%;
+   font-weight: 800;
+   color: var(--primaryTextColorBright);
+   font-size: var(--fontSizeMedium);
+   margin: 2rem 0;
+   padding: 1rem;
+   border-bottom: 2px solid var(--tertiaryColor);
+}
+form input:focus {
+   border: 1px solid var(--primaryColorHot);
+}
+form input[type="submit"]:hover {
+   background: var(--primaryTextColorBright);
+   color: var(--primaryColor);
+}
+form p a {
+   color: var(--secondaryColor);
+   text-decoration: none;
+   font-weight: 700;
+   padding: 16px 0;
+}
+.info {
+   font-weight: 500;
+   padding: 0;
+   font-size: var(--fontSizeSmall);
+}
+.info a {
+   text-decoration: none;
+   font-weight: 500;
+   color: var(--primaryTextColorSec);
+}
+.rightBar {
+   display: none;
+}
+.forgotPass {
+   font-size: calc(var(--fontSizeSmall) + 4%);
+   color: var(--primaryTextColor);
+}
+button.blue {
+   all: unset;
+   background: #1a53dc;
+   color: #fff;
+   padding: .5em 1.2em;
+   font-size: var(--fontSizeMedium);
+   margin: 1vw 0;
+}
+button.blue:hover {
+   background: #000;
+   color: #fff;
+}
+p.message {
+   padding: 3vh 0vh 3vh 0;
+   color: #4a77e3;
+   border-bottom: 1px solid #4a77e3;
+}
+@media only screen and (min-width: 719px) {
+   .app {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      justify-content: center;
+      align-items: center;
+   }
+   .app div:nth-child(1) {
+      padding-right: 4dvw;
+   }
+   .rightBar {
+      display: block;
+      padding: 2.5rem 4dvh;
+      display: grid;
+      place-items: center;
+      overflow: hidden!important;
+      max-height: 80vh;
+   }
+   .rightBar img {
+      width: 170%;
+      object-fit: cover;
+      height: auto;
+      opacity: 0.9;
+   }
+   form {
+      padding: 1dvh;
+   }
+   h2 {
+      padding: 4vh 0;
+   }
+}
+@media only screen and (min-width: 1440px) {
+:root {
+   font-size: 105%;
+}
+}

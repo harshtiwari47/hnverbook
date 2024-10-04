@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title><%= title %></title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <% if (theme === 'dark') {
+      %>
+      <link rel="stylesheet" href="/stylesheets/dark.css">
+      <%
+   } else {
+      %>
+      <link rel="stylesheet" href="/stylesheets/light.css">
+      <%
+   } %>
+   <link rel='stylesheet' href='/stylesheets/style.css' />
+<link rel='stylesheet' href='/stylesheets/notes/index.css' />
+<%- include('../partials/head') %>
+   <script src="/scripts/index.js" defer type="module"></script>
+<script src="/scripts/notes/index.js" defer></script>
+</head>
+<body>
+
+<%- include('../partials/header', {
+theme, title: null, leftIcon: null, click: null, titleClick: null, rightButtons: [{
+icon: 'Plus', url: '/notes/spaces/create', click: null, size: 'normal'
+}]}) %>
+
+<div id="app" class="app">
+<div id="screen" class="screen">
+<h2 class="greet">PRIVATE SPACES</h2>
+
+<div class="spaceContainer">
+<%- docs %>
+</div>
+</div>
+<%- include('../partials/navigation', {
+theme, active: 'notes'
+}) %>
+</div>
+
+</body>
+</html>

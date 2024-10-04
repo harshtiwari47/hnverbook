@@ -1,0 +1,35 @@
+.screen {
+   padding: 2dvw 8dvw calc(4dvw + 4rem) 8dvw;
+   background: linear-gradient(to bottom, var(--primaryColor), var(--primaryColorSec));
+   min-height: calc(100vh - 6dvw - 4rem);
+   box-sizing: border-box;
+}
+.sticky-layout-top {
+   position: sticky;
+   top: 0;
+   left: 0;
+   width: 100%;
+   display: grid;
+   place-items: center;
+   border-radius: 0 0 1.5em 1.5em;
+}
+.sticky-layout-top .searchbar {
+   display: flex;
+   padding: 1em 1.5em;
+   align-items: center;
+   gap: 1em;
+   box-sizing: border-box;
+   border-bottom: 2px solid var(--primaryTextColorBright);
+   margin: 1.5em 0;
+   border-radius: 1em;
+   width: 80vw;
+   max-width: 600px;
+}
+.sticky-layout-top .searchbar p {
+   font-size: calc(var(--fontSizeInput) - 5%);
+   color: var(--primaryTextColor);
+   font-family: 'Syne';
+   font-style: italic;
+   font-weight: 500;
+   word-wrap: nowrap;
+}

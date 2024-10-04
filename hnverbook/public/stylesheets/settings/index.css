@@ -1,0 +1,45 @@
+.screen {
+   padding: 4dvw 8dvw 4dvw 8dvw;
+}
+h2 {
+   margin: 4dvw 8dvw 0 8dvw;
+   font-size: var(--fontSizeMedium);
+   padding: 4vh 0;
+   font-family: 'Syne';
+   color: var(--primaryTextColorBright);
+}
+.general {
+   columns: 200px 2;
+   column-gap: 2vw;
+}
+.about {
+   padding: 8vh 0;
+}
+.about ul {
+   display: flex;
+}
+.about a {
+   all: unset;
+}
+.about li {
+   display: inline-block;
+   font-family: 'Syne';
+   margin: 0 6vw 8vw 0;
+   font-size: calc(var(--fontSizeNormal) + 14%);
+}
+.menu a .items {
+   display: flex;
+   align-items: center;
+   gap: 1.5em;
+   background: var(--primaryColorDark);
+   padding: 1em;
+   margin-bottom: calc(1rem + 1vw);
+}
+.menu a {
+   all: unset;
+}
+.menu a .items p {
+   font-size: var(--fontSizeNormal);
+   color: var(--primaryTextColorBright);
+   font-weight: 600;
+}

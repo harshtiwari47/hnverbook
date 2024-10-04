@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title><%= title %></title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <% if (theme === 'dark') {
+      %>
+      <link rel="stylesheet" href="/stylesheets/dark.css">
+      <%
+   } else {
+      %>
+      <link rel="stylesheet" href="/stylesheets/light.css">
+      <%
+   } %>
+   <link rel='stylesheet' href='/stylesheets/style.css' />
+<link rel='stylesheet' href='/stylesheets/posts/create.css' />
+<%- include('partials/head') %>
+<script src="/scripts/posts/landing.js" type="module"></script>
+</head>
+<body>
+   
+<%- include('partials/header', {
+theme, title: null, leftIcon: null, click: null, titleClick: null, rightButtons: [
+   { icon: 'Arrow Left Square', url: 'javascript:void(0)', click: 'window.history.go(-1)', size: 'normal'}
+]}) %>
+
+<div id="app" class="app">
+<div id="screen" class="screen">
+<h2 class="greet">Create A New Post ✷</h2>
+<form action="/create/new" method="post">
+  <label for="contentType">Select Content Type:</label>
+  <select id="contentType" name="contentType" required>
+    <option value="" disabled selected>Select an option</option>
+    <option value="blip">Blip</option>
+    <option value="media" disabled>Media</option>
+    <option value="blog" disabled>Blog</option>
+    <option value="events" disabled>Events</option>
+    <option value="discussion" disabled>Discussion</option>
+    <option value="storyboard" disabled>Storyboard</option>
+    <option value="interactive" disabled>Interactive</option>
+  </select>
+  
+  <textarea id="title" name="title" placeholder="Enter title for your post..." maxlength="100" required></textarea>
+  <textarea id="keywords" name="keywords" placeholder="Keywords (separated by comma)" maxlength="200"></textarea>
+  <input type="submit" value="Next —›">
+</form>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+:root {
+   --primaryColor: #111216;
+   --primaryTextColor: #bbcaf3;
+   --primaryTextColorSec: #89adda;
+   --primaryColorSec: #050811;
+   --primaryColorLight: #101422;
+   --primaryColorDark: #000;
+   --primaryTextColorBright: #f3f3f3;
+   --warningColor: #eba9a9;
+   --successColor: #72f67f;
+   --successColorBG: #00910e26;
+   --warningColorBG: #380d0d8c;
+   --primaryColorHot: #39466aa8;
+   --secondaryColor: #ea3f3f;
+   --tertiaryColor: #6768ea;
+   --tertiaryColorDark: #1313b8;
+   --fontSizeSmall: calc(70% + .6vw);
+   --fontSizeNormal: calc(90% + .6vw);
+      --fontSizeInput: calc(110% + .6vw);
+   --fontSizeMedium: calc(130% + .6vw);
+   --fontSizeLarger: calc(150% + .6vw);
+}

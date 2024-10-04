@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title><%= title %></title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <% if (theme === 'dark') { %>
+    <link rel="stylesheet" href="/stylesheets/dark.css">
+  <% } else { %>
+    <link rel="stylesheet" href="/stylesheets/light.css">
+  <% } %>
+   <link rel='stylesheet' href='/stylesheets/style.css' />
+   <link rel='stylesheet' href='/stylesheets/authentication.css' />
+       <%- include('partials/head') %>
+   <script src="/scripts/authentication/login.js" defer></script>
+</head>
+<body>
+       <%- include('partials/headerPages') %>
+   <div class="app">
+      <div class="leftBar">
+<h2>LOG IN</h2>
+  <%- include('partials/errorMessage') %>
+ 
+<form id="loginForm" target="/auth/login" method="post">
+<section>
+<label for="email">EMAIL</label>
+<input type="email" autocomplete="email" placeholder="Your Email" name="email" id="email" required>
+</section>
+<section>
+<label for="password">PASSWORD</label>
+<input type="password" minlength="6" autocomplete="password" placeholder="Your Password" name="password" id="password" required>
+</section>
+<input type="submit" value="LOGIN" id="loginButton" name="login">
+<p><a class="forgotPass" href="/account/reset-password">Password abducted by aliens? Time to reset it now!</a></p>
+<p><a href="/auth/signup">Need an account?</a></p>
+</form>
+</div>
+      <div class="rightBar">
+         <img src="/illustration/authDesign.png" width="100" height="200" alt="HnverBook Authentication Image">
+      </div>
+</div>
+</body>
+</html>

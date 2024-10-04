@@ -1,0 +1,86 @@
+.screen {
+   padding: 4dvw 8dvw 4dvw 8dvw;
+}
+h2 {
+   margin: 4dvw 0 0 0;
+   font-size: var(--fontSizeMedium);
+   padding: 2rem 0;
+   font-family: 'Syne';
+   color: var(--primaryTextColorBright);
+}
+
+form {
+   padding: 1.4rem 0;
+}
+.emailDetail {
+   padding: 0 0 1.5rem 0;
+   font-size: calc(var(--fontSizeSmall) + 16%);
+}
+form label {
+   font-family: 'Syne';
+   font-style: italic;
+   color: var(--primaryTextColorSec);
+   font-size: calc(var(--fontSizeSmall) + 16%);
+}
+form input[type="text"], form input[type="url"],form input[type="email"], form input[type="password"] {
+   all: unset;
+   font-family: 'Syne';
+   width: 100%;
+   box-sizing: border-box;
+   display: block;
+   margin: 1rem 0 2rem 0;
+   padding: 1rem;
+   font-size: var(--fontSizeInput);
+   background: var(--primaryColorLight);
+   color: var(--primaryTextColorBright);
+}
+form input::placeholder {
+   color: var(--primaryTextColor);
+}
+form input[type="submit"] {
+   all: unset;
+   font-family: 'Syne';
+   box-sizing: border-box;
+   display: grid;
+   place-items: center;
+   text-align: center;
+   width: 100%;
+   font-weight: 800;
+   color: var(--primaryColorDark);
+   font-size: var(--fontSizeInput);
+   margin: 2rem 0;
+   padding: 1rem;
+   border-bottom: 2px solid var(--tertiaryColor);
+   background: var(--primaryTextColorBright);
+}
+form input:focus {
+   border: 1px solid var(--primaryColorHot);
+}
+form input[type="submit"]:hover {
+   background: #00000000;
+   color: var(--primaryTextColorSec);
+}
+textarea {
+   all: unset;
+   font-family: 'Syne';
+   width: 100%;
+   white-space: normal;
+   overflow-wrap: break-word;
+   box-sizing: border-box;
+   display: block;
+   margin: 1rem 0 2rem 0;
+   padding: 1rem;
+   font-size: var(--fontSizeInput);
+   background: var(--primaryColorLight);
+   color: var(--primaryTextColorBright);
+}
+textarea::placeholder {
+   color: var(--primaryTextColor);
+}
+.resetPassOption {
+   all: unset;
+   font-size: var(--fontSizeInput);
+   color: var(--primaryTextColor);
+   font-weight: 700;
+   padding: 0 0 1.4rem 0;
+}

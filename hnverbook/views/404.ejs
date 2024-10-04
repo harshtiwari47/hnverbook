@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Page Not Found</title>
+   <% if (theme === 'dark') { %>
+    <link rel="stylesheet" href="/stylesheets/dark.css">
+  <% } else { %>
+    <link rel="stylesheet" href="/stylesheets/light.css">
+  <% } %>
+   <style>
+      body {
+         font-family: Arial, sans-serif;
+         text-align: center;
+         margin: 0;
+         background: linear-gradient(to bottom, var(--primaryColor), var(--primaryColorSec));
+      }
+      .container {
+         border-radius: 8px;
+         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+         padding: 2dvw 8dvw 4dvw 8dvw;
+         background: linear-gradient(to bottom, var(--primaryColor), var(--primaryColorSec));
+         min-height: calc(100vh - 6dvw - 4rem);
+         box-sizing: border-box;
+         line-height: 1.5;
+      }
+      h1 {
+         color: var(--primaryTextColorBright);
+         letter-spacing: 0.1vw;
+      }
+      p {
+         color: var(--primaryTextColor);
+      }
+      a {
+         color: #007bff;
+         text-decoration: none;
+         font-weight: 700;
+      }
+      a:hover {
+         text-decoration: underline;
+      }
+   </style>
+</head>
+<body>
+   <div class="container">
+      <h1>Sorry, this page isn't available.</h1>
+      <p>
+         The link you followed may be broken, or the page may have been removed.
+      </p>
+      <p>
+         <a href="/">Go back to HnverBook</a>
+      </p>
+   </div>
+</body>
+</html>

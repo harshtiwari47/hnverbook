@@ -144,6 +144,11 @@ div#error-message.success {
    transition: border-radius 3s linear,
    width 3s linear;
 }
+.navigation ul li a img:hover {
+   width: 1.7em;
+   opacity: 0.9;
+   transition: width .2s linear;
+}
 
 .navigation ul li.active a img {
    height: 100%;

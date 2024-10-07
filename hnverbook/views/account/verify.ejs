@@ -13,7 +13,9 @@
          <%- include('../partials/head') %>
          </head>
          <body>
-            <%- include('../partials/headerPages') %>
+               <%- include('../partials/header', {
+theme, title: null, leftIcon: null, click: null, titleClick: null, rightButtons: []}) %>
+  
                <div class="app">
                   <div class="leftBar">
                      <h2>VERIFY YOUR EMAIL</h2>

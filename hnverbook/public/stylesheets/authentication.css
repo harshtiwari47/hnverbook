@@ -6,6 +6,10 @@ header {
    height: 4rem;
    border-bottom: 1px solid var(--primaryColorHot);
 }
+header img {
+   width: 2em;
+   height: 2em;
+}
 .app {
    padding: 2dvw 8dvw 4dvw 8dvw;
    background: linear-gradient(to bottom, var(--primaryColor), var(--primaryColorSec));
@@ -121,6 +125,10 @@ p.message {
    }
    .app div:nth-child(1) {
       padding-right: 4dvw;
+   }
+   header img {
+      width: 3em;
+      height: 3em;
    }
    .rightBar {
       display: block;

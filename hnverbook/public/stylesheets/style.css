@@ -101,9 +101,9 @@ div#error-message {
    background: linear-gradient(to right, var(--warningColorBG), #00000000);
 }
 div#error-message.success {
-  border-left: 2px solid #0eb01d; 
-  color: var(--successColor);
-  background: linear-gradient(to right, var(--successColorBG), #00000000);
+   border-left: 2px solid #0eb01d;
+   color: var(--successColor);
+   background: linear-gradient(to right, var(--successColorBG), #00000000);
 }
 .navigation {
    border-top: 1px solid var(--primaryColorHot);
@@ -311,22 +311,27 @@ div#error-message.success {
    .layout-horizontal .navigation ul li a {
       width: 100%;
    }
-   
+
    .layout-horizontal .navigation ul li a img {
-   width: 2.25em;
+      width: 2.25em;
    }
-   
+
    .navigation ul li.active a img {
       width: 3.25em;
       animation: navIcons .1s linear;
    }
-   
+
    header.main .right a img {
-   box-sizing: border-box;
-   width: 2.5em;
+      box-sizing: border-box;
+      width: 2.5em;
    }
 
    header.main .right a .small {
       width: 2em;
+   }
+}
+@media only screen and (min-width: 1920px) {
+   header.main .right a img {
+      width: calc(4em + 2dvw);
    }
 }

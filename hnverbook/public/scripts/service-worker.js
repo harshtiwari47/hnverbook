@@ -1,9 +1,22 @@
 const CACHE_NAME = 'hnverbook-cache-v1';
 const urlsToCache = [
   '/',
-  '/styles/main.css',
-  '/scripts/main.js',
-  '/images/logo.png'
+  '/stylesheets/style.css',
+  '/stylesheets/dark.css',
+  '/stylesheets/light.css',
+  '/stylesheets/home.css',
+  '/stylesheets/accounts/profile.css',
+  '/stylesheets/notes/index.css',
+  '/stylesheets/notes/space.css',
+  '/stylesheets/notes/new.css',
+  '/stylesheets/explore/index.css',
+  '/stylesheets/explore/search.css',
+  '/stylesheets/posts/create.css',
+  '/stylesheets/posts/blip.css',
+  '/stylesheets/settings/index.css',
+  '/stylesheets/settings/account.css',
+  '/scripts/index.js',
+  '/scripts/'
 ];
 
 // Install event - Cache files

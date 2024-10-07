@@ -1,6 +1,7 @@
 {
   "short_name": "HnverBook",
   "name": "HnverBook",
+  "display":"fullscreen",
   "icons": [
     {
       "src": "/icon/icons-192.png",

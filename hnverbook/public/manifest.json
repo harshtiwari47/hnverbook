@@ -1,0 +1,47 @@
+{
+  "short_name": "HnverBook",
+  "name": "HnverBook",
+  "icons": [
+    {
+      "src": "/icon/icons-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon/hnverbook-small.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "id": "/",
+  "start_url": "/",
+  "background_color": "#d0dcf5",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#4167d2ff",
+  "shortcuts": [
+    {
+      "name": "View Spaces",
+      "short_name": "Spaces",
+      "description": "View or create a new space",
+      "url": "/notes",
+      "icons": [{ "src": "/icon/stroke/Note With Text/000/192/1.5", "sizes": "192x192" }]
+    },
+    {
+      "name": "Create A Post",
+      "short_name": "Create Post",
+      "description": "Create a new post",
+      "url": "/create",
+      "icons": [{ "src": "/icon/stroke/Plus Square/000/192/1.5", "sizes": "192x192" }]
+    }
+  ],
+  "description": "HnverBook - The perfect platform for creating and sharing notes, short stories, and interactive text-based story-driven games. HnverBook offers simple tools to bring your narrative ideas to life. Start crafting your stories today!",
+  "screenshots": [
+    {
+      "src": "/illustration/banner-wide.jpg",
+      "type": "image/jpg",
+      "sizes": "720x540",
+      "form_factor": "wide"
+    }
+  ]
+}

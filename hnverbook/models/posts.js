@@ -23,17 +23,14 @@ Posts.init({
          model: User,
          key: 'user_id'
       },
-      field: 'user_id'
    },
    createdAt: {
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
-      field: 'created_at'
    },
    updatedAt: {
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
-      field: 'updated_at'
    },
    type: {
       type: DataTypes.ENUM,
@@ -93,7 +90,6 @@ Like.init({
          model: User,
          key: 'user_id'
       },
-      field: 'user_id'
    },
    postId: {
       type: DataTypes.UUID,
@@ -102,7 +98,6 @@ Like.init({
          model: Posts,
          key: 'post_id'
       },
-      field: 'post_id'
    }
 }, {
    sequelize,
@@ -132,8 +127,7 @@ Comment.init({
       references: {
          model: User,
          key: 'user_id'
-      },
-      field: 'user_id'
+      }
    },
    postId: {
       type: DataTypes.UUID,
@@ -142,7 +136,6 @@ Comment.init({
          model: Posts,
          key: 'post_id'
       },
-      field: 'post_id'
    },
    content: {
       type: DataTypes.TEXT,
@@ -151,7 +144,6 @@ Comment.init({
    createdAt: {
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
-      field: 'created_at'
    }
 }, {
    sequelize,
@@ -182,8 +174,7 @@ Share.init({
       references: {
          model: User,
          key: 'user_id'
-      },
-      field: 'user_id'
+      }
    },
    postId: {
       type: DataTypes.UUID,
@@ -191,13 +182,11 @@ Share.init({
       references: {
          model: Posts,
          key: 'post_id'
-      },
-      field: 'post_id'
+      }
    },
    sharedAt: {
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
-      field: 'shared_at'
    }
 }, {
    sequelize,
@@ -228,8 +217,7 @@ Save.init({
       references: {
          model: User,
          key: 'user_id'
-      },
-      field: 'user_id'
+      }
    },
    postId: {
       type: DataTypes.UUID,
@@ -237,13 +225,11 @@ Save.init({
       references: {
          model: Posts,
          key: 'post_id'
-      },
-      field: 'post_id'
+      }
    },
    savedAt: {
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
-      field: 'saved_at'
    }
 }, {
    sequelize,

@@ -275,7 +275,7 @@ export async function getUserSpaces(user, starts, ends) {
                Sequelize.literal(`(
                   SELECT COUNT(*)
                   FROM notes
-                  WHERE notes.space_id = Spaces.space_id
+                  WHERE notes.space_id = spaces.space_id
                   )`),
                'notesCount'
             ]

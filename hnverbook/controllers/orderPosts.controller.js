@@ -32,7 +32,7 @@ export async function getUserPosts(user, starts, ends) {
                Sequelize.literal(`(
                   SELECT COUNT(*)
                   FROM likes
-                  WHERE likes.post_id = Posts.post_id
+                  WHERE likes.post_id = posts.post_id
                   )`), 'likeCount'
             ],
             // comment count
@@ -40,7 +40,7 @@ export async function getUserPosts(user, starts, ends) {
                Sequelize.literal(`(
                   SELECT COUNT(*)
                   FROM comments
-                  WHERE comments.post_id = Posts.post_id
+                  WHERE comments.post_id = posts.post_id
                   )`), 'commentCount'
             ],
             // share count
@@ -48,7 +48,7 @@ export async function getUserPosts(user, starts, ends) {
                Sequelize.literal(`(
                   SELECT COUNT(*)
                   FROM shares
-                  WHERE shares.post_id = Posts.post_id
+                  WHERE shares.post_id = posts.post_id
                   )`), 'shareCount'
             ],
             // Subquery for isLiked
@@ -57,7 +57,7 @@ export async function getUserPosts(user, starts, ends) {
                   EXISTS(
                   SELECT 1
                   FROM likes
-                  WHERE likes.user_id = '${user}' AND likes.post_id = Posts.post_id
+                  WHERE likes.user_id = '${user}' AND likes.post_id = posts.post_id
                   )
                   )`), 'isLiked'
             ],
@@ -67,7 +67,7 @@ export async function getUserPosts(user, starts, ends) {
                   EXISTS(
                   SELECT 1
                   FROM saves
-                  WHERE saves.user_id = '${user}' AND saves.post_id = Posts.post_id
+                  WHERE saves.user_id = '${user}' AND saves.post_id = posts.post_id
                   )
                   )`), 'isSaved'
             ]

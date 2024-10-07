@@ -25,8 +25,7 @@ Blip.init({
       references: {
          model: Posts,
          key: 'post_id'
-      },
-      field: 'post_id'
+      }
    },
    userId: {
       type: DataTypes.UUID,
@@ -34,8 +33,7 @@ Blip.init({
       references: {
          model: User,
          key: 'user_id'
-      },
-      field: 'user_id'
+      }
    },
    description: {
       type: DataTypes.STRING(250),

@@ -7,9 +7,9 @@ try {
  sequelize = new Sequelize('database', 'user', 'pass', {
    dialect: 'sqlite',
    host: './db.sqlite',
-   logging: false
+   logging: true
 });
-*/
+*/ 
 
  sequelize = new Sequelize('HnverBook', 'avnadmin', process.env.DB_PASSWORD, {
    dialect: 'mysql',
@@ -22,6 +22,7 @@ try {
    },
    logging: false 
 });
+
 } catch (e) {
    console.error('failed to connect database!', e)
 }

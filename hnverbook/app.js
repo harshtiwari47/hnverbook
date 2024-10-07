@@ -36,13 +36,13 @@ app.use(express.urlencoded({
    extended: false
 }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'), {
+   maxAge: '30d', // Cache files for 7 days
+  etag: true,    // ETag headers
+  lastModified: true, // Last-Modified headers
+}));
 app.use((err, req, res, next) => {
    handleError(err, res);
-});
-
-app.get('/clear-cache', (req, res) => {
-   
 });
 
 app.use('/', indexRouter);

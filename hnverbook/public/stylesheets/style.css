@@ -81,6 +81,7 @@ header.main .right a {
 header.main .right a img {
    box-sizing: border-box;
    width: 2em;
+   object-fit: cover;
 }
 
 header.main .right a .small {

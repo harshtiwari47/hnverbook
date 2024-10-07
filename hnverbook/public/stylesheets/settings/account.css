@@ -59,6 +59,7 @@ form input:focus {
 form input[type="submit"]:hover {
    background: #00000000;
    color: var(--primaryTextColorSec);
+   transition: background .25s linear;
 }
 textarea {
    all: unset;

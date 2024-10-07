@@ -53,8 +53,9 @@ Spaces.init({
    description: {
       type: DataTypes.STRING(75),
       allowNull: true,
+      defaultValue: '~',
       validate: {
-         len: [1, 75]
+         len: [0, 75]
       }
    }
 }, {
@@ -86,7 +87,8 @@ Notes.init({
       references: {
          model: Spaces,
          key: 'space_id'
-      }
+      },
+      field: 'space_id'
    },
    userId: {
       type: DataTypes.UUID,
@@ -94,7 +96,8 @@ Notes.init({
       references: {
          model: User,
          key: 'user_id'
-      }
+      },
+      field: 'user_id'
    },
    createdAt: {
       type: DataTypes.DATE,

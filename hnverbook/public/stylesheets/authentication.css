@@ -22,7 +22,7 @@ h2 {
    color: var(--primaryTextColorBright);
 }
 p {
-   font-size: var(--fontSizeNormal);
+   font-size: calc(var(--fontSizeNormal) - 6%);
    padding: 0 0 6vh 0;
    line-height: 1.45;
 }
@@ -71,6 +71,7 @@ form input:focus {
 form input[type="submit"]:hover {
    background: var(--primaryTextColorBright);
    color: var(--primaryColor);
+   transition: background .25s linear;
 }
 form p a {
    color: var(--secondaryColor);
@@ -92,7 +93,6 @@ form p a {
    display: none;
 }
 .forgotPass {
-   font-size: calc(var(--fontSizeSmall) + 4%);
    color: var(--primaryTextColor);
 }
 button.blue {
@@ -141,6 +141,9 @@ p.message {
    }
    h2 {
       padding: 4vh 0;
+   }
+   form input[type="text"],form input[type="email"], form input[type="password"] {
+      margin: 1rem 0 4rem 0;
    }
 }
 @media only screen and (min-width: 1440px) {

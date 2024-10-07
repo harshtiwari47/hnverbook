@@ -248,10 +248,16 @@ export const updateProfile = async (req, res) => {
 };
 
 // Refresh user access token once expired
-export const refreshAccessToken = async (req, res, next) => {
+export const refreshAccessToken = async (req, res, next, redirect = true) => {
    const refreshToken = req.cookies.refreshToken;
 
-   if (!refreshToken) return res.redirect('/auth/login');
+   if (!refreshToken) {
+      if (redirect) {
+         return res.redirect('/auth/login');
+      } else {
+         return 'unauthorised';
+      }
+   }
 
    try {
 
@@ -263,14 +269,22 @@ export const refreshAccessToken = async (req, res, next) => {
       if (!user) {
          res.clearCookie('accessToken');
          res.clearCookie('refreshToken');
-         return res.redirect('/auth/login');
+         if (redirect) {
+            return res.redirect('/auth/login');
+         } else {
+            return 'unauthorised';
+         }
       }
 
-      jwt.verify(refreshToken, refreshTokenSecret, (err, decoded) => {
+     await jwt.verify(refreshToken, refreshTokenSecret, (err, decoded) => {
          if (err) {
             res.clearCookie('accessToken');
             res.clearCookie('refreshToken');
-            return res.redirect('/auth/login');
+            if (redirect) {
+               return res.redirect('/auth/login');
+            } else {
+               return 'unauthorised';
+            }
          }
 
          const newAccessToken = jwt.sign({
@@ -290,7 +304,11 @@ export const refreshAccessToken = async (req, res, next) => {
          return next();
       });
    } catch (error) {
-      return res.redirect('/auth/login');
+      if (redirect) {
+         return res.redirect('/auth/login');
+      } else {
+         return 'unauthorised';
+      }
    }
 };
 

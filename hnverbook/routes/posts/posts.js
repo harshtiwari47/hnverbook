@@ -4,30 +4,30 @@ import {
    authCheckLogin,
    authCheckSignUp,
    verifyUser
-} from '../middlewares/authenticate.js';
+} from '../../middlewares/authenticate.js';
 
 import "dotenv/config.js";
 import crypto from 'crypto';
 
 import {
    User
-} from '../models/user.js';
+} from '../../models/user.js';
 import {
    Posts
-} from '../models/posts.js';
+} from '../../models/posts.js';
 import {
    Blip
-} from '../models/postType.js';
+} from '../../models/postType.js';
 
 import {
    createBlipPost,
    likePost
-} from '../controllers/post.controller.js';
+} from '../../controllers/post.controller.js';
 
 import {
    decrypt,
    encrypt
-} from '../utils/protection.js';
+} from '../../utils/protection.js';
 
 postsRouter.get('/create', verifyUser, async function(req, res, next) {
    const theme = req.cookies.theme || 'light';

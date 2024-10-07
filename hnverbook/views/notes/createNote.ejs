@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title><%= title %></title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <% if (theme === 'dark') {
+      %>
+      <link rel="stylesheet" href="/stylesheets/dark.css">
+      <%
+   } else {
+      %>
+      <link rel="stylesheet" href="/stylesheets/light.css">
+      <%
+   } %>
+   <link rel='stylesheet' href='/stylesheets/style.css' />
+<link rel='stylesheet' href='/stylesheets/notes/space.css' />
+<%- include('../partials/head') %>
+   <script src="/scripts/index.js" type="module"></script>
+   <script src="/scripts/notes/note.js" type="module"></script>
+</head>
+<body>
+
+<% if (edit) {%>
+<%- include('../partials/header', {
+theme, title: null, leftIcon: null, click: null, titleClick: null, rightButtons: [
+   { icon: 'Trash 2', url: 'javascript:void(0)', click: "deleteNote()", size: 'small'},
+   { icon: 'Arrow Left Square', url: 'javascript:void(0)', click: 'window.history.go(-1)', size: 'small'}
+]}) %>
+<% } else { %>
+<%- include('../partials/header', {
+theme, title: null, leftIcon: null, click: null, titleClick: null, rightButtons: [
+   { icon: 'Arrow Left Square', url: 'javascript:void(0)', click: 'window.history.go(-1)', size: 'normal'}
+]}) %>
+<% } %>
+
+<div id="app" class="app">
+<div id="screen" class="screen">
+<h2 class="greet"><%= edit ? 'Edit Note ✷' : 'Create A New Note✷'%></h2>
+  <%- include('../partials/errorMessage') %>
+  
+<form id="<%= edit ? 'updateNote' : 'createNote'%>" target="_blank" method="post">
+  <div class="colors">
+ <section>
+  <label for="color">BG Color:</label>
+  <input type="color" id="bgColor" name="bgColor" value="<%= edit ? note.bgColor : '#3647dd'%>">
+ </section>
+  <section>
+  <label for="color">Text Color:</label>
+  <input type="color" id="textColor" name="textColor" value="<%= edit ? note.textColor : '#fff'%>">
+ </section>
+ </div>
+  <textarea id="title" name="title" placeholder="Enter title for your note..." maxlength="115" required><%= edit ? note.title : ''%></textarea>
+  <textarea id="note" name="note" placeholder="note" maxlength="2000"><%= edit ? note.note : ''%></textarea>
+  <input type="submit" id="createNoteBtn" value="<%= edit ? 'UPDATE —>' : 'CREATE —>'%>">
+</form>
+</div>
+</div>
+
+</body>
+</html>

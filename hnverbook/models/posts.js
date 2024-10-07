@@ -22,7 +22,8 @@ Posts.init({
       references: {
          model: User,
          key: 'user_id'
-      }
+      },
+      field: 'user_id'
    },
    createdAt: {
       type: DataTypes.DATE,
@@ -91,7 +92,8 @@ Like.init({
       references: {
          model: User,
          key: 'user_id'
-      }
+      },
+      field: 'user_id'
    },
    postId: {
       type: DataTypes.UUID,
@@ -99,7 +101,8 @@ Like.init({
       references: {
          model: Posts,
          key: 'post_id'
-      }
+      },
+      field: 'post_id'
    }
 }, {
    sequelize,
@@ -129,7 +132,8 @@ Comment.init({
       references: {
          model: User,
          key: 'user_id'
-      }
+      },
+      field: 'user_id'
    },
    postId: {
       type: DataTypes.UUID,
@@ -137,7 +141,8 @@ Comment.init({
       references: {
          model: Posts,
          key: 'post_id'
-      }
+      },
+      field: 'post_id'
    },
    content: {
       type: DataTypes.TEXT,
@@ -177,7 +182,8 @@ Share.init({
       references: {
          model: User,
          key: 'user_id'
-      }
+      },
+      field: 'user_id'
    },
    postId: {
       type: DataTypes.UUID,
@@ -185,7 +191,8 @@ Share.init({
       references: {
          model: Posts,
          key: 'post_id'
-      }
+      },
+      field: 'post_id'
    },
    sharedAt: {
       type: DataTypes.DATE,
@@ -221,7 +228,8 @@ Save.init({
       references: {
          model: User,
          key: 'user_id'
-      }
+      },
+      field: 'user_id'
    },
    postId: {
       type: DataTypes.UUID,
@@ -229,7 +237,8 @@ Save.init({
       references: {
          model: Posts,
          key: 'post_id'
-      }
+      },
+      field: 'post_id'
    },
    savedAt: {
       type: DataTypes.DATE,

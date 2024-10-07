@@ -12,21 +12,21 @@
     <link rel='stylesheet' href='/stylesheets/explore/search.css' />
     <%- include('../partials/head') %>
    <script src="/scripts/index.js" defer type="module"></script>
-   <script src="/scripts/explore/search.js" defer type="module"></script>
+   <script src="/scripts/<%= type && type === 'notes' ? 'notes' : 'explore' %>/search.js" defer type="module"></script>
 </head>
  <body>
  
-   <div data-theme="<%= theme %>" id="app" class="app">
+   <div data-searchtype="<%= type && type === 'notes' ? 'notes' : 'users' %>" data-theme="<%= theme %>" id="app" class="app">
       <div id="screen" class="screen">
          <div class="layout-top">
             <div class="searchbar">
                <img src="/icon/stroke/Search/<%= theme === 'light' ? '171b20' : 'dbe1e8' %>/30/1.5" width="30" height="30" alt="search">
-               <input type="text" placeholder="Search user..." autocomplete="off" id="inputSearch" class="searchText" maxlength="60">
+               <input type="text" placeholder="Search  <%= type && type === 'notes' ? 'note' : 'user' %>..." autocomplete="off" id="inputSearch" class="searchText" maxlength="60">
             </div>
          </div>
          <div class="results" id="results">
             <div class="resultMessage">
-               Looking for someone? Start typing and find the user you're after in no time!
+               Looking for <%= type && type === 'notes' ? 'notes' : 'someone' %>? Start typing and find the <%= type && type === 'notes' ? 'note' : 'user' %> you're after in no time!
             </div>
          </div>
       </div>

@@ -1,0 +1,71 @@
+.screen {
+   padding: 4dvw 0 calc(4dvw + 4rem) 0;
+   background: linear-gradient(to bottom, var(--primaryColor), var(--primaryColorSec));
+   box-sizing: border-box;
+}
+
+.noteHeader {
+   padding: 1em 8dvw;
+   background: var(--background);
+}
+.noteHeader h2 {
+   font-size: var(--fontSizeMedium);
+   padding: 2em 0;
+   font-family: 'Syne';
+   color: var(--color);
+}
+.noteHeader p {
+   font-size: var(--fontSizeSmall);
+   color: var(--color);
+   opacity: 0.8;
+   padding-bottom: 2em;
+}
+.noteDescription {
+   font-family: 'Syne';
+   padding: 2em calc(8dvw + 1em);
+   font-size: calc(var(--fontSizeSmall) + 20%);
+   color: var(--primaryTextColorBright);
+}
+.noteDescription h1 {
+   font-size: calc(var(--fontSizeNormal) + 50%);
+   padding: 1.2em 0;
+}
+.noteDescription h2 {
+   font-size: calc(var(--fontSizeNormal) + 30%);
+   padding: 1.1em 0;
+}
+.noteDescription h3 {
+   font-size: calc(var(--fontSizeNormal) + 24%);
+   padding: 1em 0;
+}
+
+.noteDescription ol {
+   list-style-type: upper-roman;
+   margin-bottom: 1em;
+   padding: .25em 0;
+   list-style-position: inside;
+}
+.noteDescription ol li {
+   padding: 0;
+   margin: 0;
+}
+
+.noteDescription ul {
+   padding: 1em;
+   box-sizing: border-box;
+}
+.noteDescription pre {
+   display: block;
+   padding: 1em;
+   background: #bbbbe719;
+}
+.noteDescription pre code {
+   background: #bbbbe719;
+}
+.noteDescription img {
+   width: 100%;
+   padding: 1em 0;
+}
+.noteDescription a {
+   color: var(--tertiaryColor);
+}

@@ -16,11 +16,11 @@ import {
 import indexRouter from './routes/index.js';
 import authRouter from './routes/accounts/auth.js';
 import accountRouter from './routes/accounts/account.js';
-import iconRouter from './routes/icons.js';
-import postsRouter from './routes/posts.js';
+import iconRouter from './routes/helpers/icons.js';
+import postsRouter from './routes/posts/posts.js';
 import settingsRouter from './routes/settings.js';
-import exploreRouter from './routes/explore.js';
-import notesRouter from './routes/notes.js';
+import exploreRouter from './routes/explore/explore.js';
+import notesRouter from './routes/notes/notes.js';
 
 const app = express();
 sequelize.sync().then(() => {
@@ -41,6 +41,9 @@ app.use((err, req, res, next) => {
    handleError(err, res);
 });
 
+app.get('/clear-cache', (req, res) => {
+   
+});
 
 app.use('/', indexRouter);
 app.use('/auth', authRouter);

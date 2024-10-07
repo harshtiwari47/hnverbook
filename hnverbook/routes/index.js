@@ -81,6 +81,7 @@ indexRouter.get('/profile/:username', verifyUser, async function(req, res, next)
             },
             raw: true
          });
+         
          const observingData = await Observer.findAll({
             attributes: [
                [Sequelize.fn('COUNT', Sequelize.col('observing_id')), 'observingCount'], // Count of users this user observing

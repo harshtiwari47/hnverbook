@@ -1,10 +1,17 @@
+#app {
+   height: 99vh!important;
+}
+   .layout-horizontal .navigation {
+      padding: auto 4dvw;
+      align-items: center!important;
+   }
 .screen {
    padding: 6dvw 8dvw calc(4dvw + 4rem) 8dvw;
    background: linear-gradient(to bottom, var(--primaryColor), var(--primaryColorSec));
-   min-height: calc(100vh - 6dvw - 4rem);
+   max-height: 100vh!important;
    box-sizing: border-box;
    overflow-y: scroll;
-   height: 100vh;
+   height: 100vh!important;
 }
 
 .layout-top {
@@ -48,6 +55,9 @@ input[type="text"] {
 input::placeholder {
    color: var(--primaryTextColor);
 }
+input[type="text"]:focus {
+   border: 1px solid var(--primaryTextColorBright);
+}
 .item {
    padding: .5em;
    margin: 0 0 1em 0;
@@ -56,6 +66,15 @@ input::placeholder {
    padding: 8dvw 0;
 }
 .user {
+   display: flex;
+   align-items: center;
+   gap: 1em;
+   height: 4rem;
+   padding: .5em 1em;
+   border-radius: 0.25em;
+   border-bottom: 1px solid var(--primaryColorHot);
+}
+.note {
    display: flex;
    align-items: center;
    gap: 1em;
@@ -74,6 +93,13 @@ input::placeholder {
    background: #000;
 }
 .user .userInfo {}
+.note .noteInfo .title {
+   color: var(--primaryTextColorBright);
+   font-size: calc(var(--fontSizeNormal));
+   font-weight: 700;
+   margin-bottom: .3em;
+   text-overflow: ellipsis;
+}
 .user .userInfo .name {
    color: var(--primaryTextColorBright);
    font-size: calc(var(--fontSizeNormal));
@@ -95,6 +121,13 @@ input::placeholder {
    align-items: center;
    gap: .25em;
 }
+.note .updated {
+   font-family: 'Syne';
+   font-size: var(--fontSizeNormal);
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+}
 .resultMessage {
    font-family: 'Syne';
    font-size: var(--fontSizeMedium);
@@ -102,4 +135,14 @@ input::placeholder {
    box-sizing: border-box;
    line-height: 1.5;
    color: var(--primaryTextColorSec);
+}
+
+@media only screen and (min-width: 719px) {
+      .layout-horizontal .navigation ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: max-content;
+    }
 }

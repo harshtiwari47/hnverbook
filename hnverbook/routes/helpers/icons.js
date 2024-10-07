@@ -23,7 +23,7 @@ iconRouter.get('/stroke/:name/:color?/:size?/:strokeWidth?', function(req, res, 
       color = "#" + color;
    }
 
-   const filePath = path.join(__dirname, '../public/icon/svg/stroke', `${name}.svg`);
+   const filePath = path.join(__dirname, '../../public/icon/svg/stroke', `${name}.svg`);
    fs.readFile(filePath, 'utf8', (err, data) => {
       if (err) {
          return res.status(404).send('Icon not found');

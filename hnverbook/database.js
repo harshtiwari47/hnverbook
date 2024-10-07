@@ -1,19 +1,19 @@
 import "dotenv/config.js";
+import { Sequelize } from 'sequelize';
 
-/*
-const sequelize = new Sequelize('database', 'user', 'pass', {
+let sequelize;
+try {
+ /*
+ sequelize = new Sequelize('database', 'user', 'pass', {
    dialect: 'sqlite',
    host: './db.sqlite',
    logging: false
 });
-
-export default sequelize; */
-
-import { Sequelize } from 'sequelize';
+*/
 
 const sequelize = new Sequelize('HnverBook', 'avnadmin', process.env.DB_PASSWORD, {
    dialect: 'mysql',
-   host: 'hnverbook-tiwariharsh512-601f.h.aivencloud.com',
+   host: process.env.DB_HOST,
    port: process.env.DB_PORT,
    dialectOptions: {
      ssl: {
@@ -22,5 +22,7 @@ const sequelize = new Sequelize('HnverBook', 'avnadmin', process.env.DB_PASSWORD
    },
    logging: false 
 });
-
+} catch (e) {
+   console.error('failed to connect database!', e)
+}
 export default sequelize;

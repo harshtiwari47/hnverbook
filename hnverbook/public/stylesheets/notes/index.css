@@ -1,15 +1,11 @@
 .screen {
    padding: 4dvw 8dvw 4dvw 8dvw;
    background: linear-gradient(to bottom, var(--primaryColor), var(--primaryColorSec));
-   min-height: calc(100vh - 6dvw - 4rem);
    box-sizing: border-box;
-   overflow-y: scroll;
-   height: 100vh;
 }
-
 h2.greet {
    font-size: var(--fontSizeMedium);
-   padding: 2vh 0;
+   padding: 2em 0;
    font-family: 'Syne';
    color: var(--primaryTextColorBright);
 }
@@ -36,13 +32,34 @@ h2.greet {
 }
 .spaces:hover {
    background: var(--primaryColor);
-}
-.spaces .info {
+   }
+   .spaces .info {
    display: flex;
    align-items: center;
    justify-content: space-between;
    padding: .5em 1em .5em 1em;
    position: relative;
+}
+.notesContainer {
+   padding: 8dvw 0 calc(8dvw + 4rem) 0;
+   overflow-y: scroll;
+}
+.notesContainer .notes {
+   padding: 1em .25em;
+   border-top: 1px solid var(--primaryColorLight);
+   position: relative;
+   background: var(--noteBackground);
+   border-radius: 20px;
+   margin-bottom: 3dvw;
+}
+.notesContainer .notes::before {
+   content: '◎⁠⁠';
+   position: absolute;
+   right: 0;
+   top: -.6em;
+   font-size: 2em;
+   color: var(--primaryTextColorBright);
+   opacity: 0.8;
 }
 .space-title {
    padding: .75em;
@@ -50,6 +67,10 @@ h2.greet {
    color: var(--primaryTextColorBright);
    text-overflow: ellipsis;
    overflow: hidden;
+}
+.notesContainer .space-title {
+   padding: 1em .75em;
+   line-height: 1.5;
 }
 .info a {
    all: unset;
@@ -78,9 +99,52 @@ h2.greet {
    overflow: hidden;
    flex-grow: 1;
 }
+.notesContainer .space-description {
+   font-size: var(--fontSizeSmall);
+}
+
+.searchbar {
+   display: flex;
+   padding: 1em 1.5em;
+   align-items: center;
+   gap: 1em;
+   box-sizing: border-box;
+   border-bottom: 2px solid var(--primaryTextColorBright);
+   margin: 1.5em 0;
+   border-radius: 1em;
+   width: 80vw;
+   max-width: 600px;
+}
+.searchbar p {
+   font-size: calc(var(--fontSizeInput) - 5%);
+   color: var(--primaryTextColor);
+   font-family: 'Syne';
+   font-style: italic;
+   font-weight: 500;
+   word-wrap: nowrap;
+}
 
 @media only screen and (min-width: 719px) {
+   h2.greet {
+   padding: 2em 0;
+   }
+   .spaceContainer {
+      padding-top: 1em;
+      padding-bottom: 1em;
+      column-count: 3;
+   }
    .spaceContainer {
       column-count: 3;
+   }
+   .notesContainer .notes {
+      width: 100%;
+      display: inline-block;
+   }
+   .notesContainer {
+      column-count: 2;
+      column-gap: 3dvw;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 1em;
    }
 }

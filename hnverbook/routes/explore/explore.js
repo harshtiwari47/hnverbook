@@ -4,11 +4,11 @@ import {
    authCheckLogin,
    authCheckSignUp,
    verifyUser
-} from '../middlewares/authenticate.js';
+} from '../../middlewares/authenticate.js';
 
 import {
    User
-} from '../models/user.js';
+} from '../../models/user.js';
 
 import {
    Op
@@ -48,7 +48,8 @@ exploreRouter.get('/search', verifyUser, async function(req, res, next) {
       res.render('explore/search', {
          title: 'Search | HnverBook',
          theme,
-         user
+         user,
+         type: 'users'
       });
    } catch (error) {
       res.status(500).render('error', {

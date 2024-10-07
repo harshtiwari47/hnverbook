@@ -73,3 +73,22 @@ form input[type="submit"] {
    border-bottom: 2px solid var(--tertiaryColor);
    float: right;
 }
+form input[type="submit"]:hover {
+   background: var(--primaryTextColorBright);
+   color: var(--tertiaryColor);
+   transition: background .25s linear;
+}
+.colors {
+   display: flex;
+   align-items: center;
+   justify-items: center;
+   gap: .5em;
+}
+form .colors input[type="color"] {
+   margin-left: 1em;
+}
+.colors section {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+}

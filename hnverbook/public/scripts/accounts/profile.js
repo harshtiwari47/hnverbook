@@ -10,6 +10,32 @@ toastModal.settings({
    position: "top-right"
 });
 
+window.copyCurrentUrl = (self = false, username = null) => {
+  let currentUrl;
+   if (!self) {
+    currentUrl = window.location.href;
+   } else {
+    currentUrl = `${window.location.origin}/profile/${username}`;
+   }
+
+    const textarea = document.createElement("textarea");
+    textarea.value = currentUrl;
+    document.body.appendChild(textarea);
+
+    textarea.select();
+    textarea.setSelectionRange(0, 99999);
+
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+
+    // Optionally, alert the user
+    toastModal.showConfirmation({
+            theme: "var(--warningColor)",
+            color: "var(--primaryTextColorBright)",
+            toast: "URL COPIED!"
+     })
+}
+
 let observerBtn = document.getElementById('observeBtn');
 let observingCount = document.getElementById('observingCount');
 let observerCount = document.getElementById('observerCount');

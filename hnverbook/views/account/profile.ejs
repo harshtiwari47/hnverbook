@@ -26,7 +26,7 @@
 <% if (!profileOwner) { %>
 <%- include('../partials/header', {
 theme, title: 'hnverbook', leftIcon: 'Chevron Left', click: 'history.go(-1)', titleClick: null, rightButtons: [
-   { icon: 'Copy', url: 'javascript:void(0)', click: null, size: 'small'},
+   { icon: 'Copy', url: 'javascript:void(0)', click: 'copyCurrentUrl()', size: 'small'},
    { icon: 'Dots', url: 'javascript:void(0)', click: null, size: 'small'}
 ]}) %>
    <% } else { %>
@@ -81,7 +81,9 @@ theme, title: null, leftIcon: null, click: null, titleClick: null, rightButtons:
 <% } else { %>
 <button onclick="window.location.href = '/settings/account'" class="observationState">EDIT PROFILE</button>
 <% } %>
-<button class="shareProfile"><img src="/icon/stroke/Share/<%= theme === 'light' ? 'dbe1e8' : '171b20' %>/64/1.5" width="30" height="30" alt="link" title="Share"></button>
+<button onclick="copyCurrentUrl(<%= profileOwner ? `true, '${userData.username}'` : 'false' %>)" class="shareProfile">
+    <img src="/icon/stroke/Share/<%= theme === 'light' ? 'dbe1e8' : '171b20' %>/64/1.5" width="30" height="30" alt="link" title="Share">
+</button>
 </div>
 </div>
 <div class="tabs">

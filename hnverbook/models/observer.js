@@ -23,7 +23,8 @@ Observer.init({
       references: {
          model: User,
          key: 'user_id'
-      }
+      },
+      field: 'observer_id'
    },
    observingId: {
       type: DataTypes.UUID,
@@ -31,7 +32,8 @@ Observer.init({
       references: {
          model: User,
          key: 'user_id'
-      }
+      },
+      field: 'observing_id'
    },
    createdAt: {
       type: DataTypes.DATE,

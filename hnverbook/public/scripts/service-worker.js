@@ -27,13 +27,16 @@ self.addEventListener('install', function(event) {
         console.log('Opened cache');
         return cache.addAll(urlsToCache);
       })
+      .catch(error => console.error('Caching failed:', error))
   );
 });
 
 // Fetch event - Serve cached content and update cache later
 self.addEventListener('fetch', (event) => {
-   
+  const requestUrl = new URL(event.request.url);
+
   if (requestUrl.pathname.startsWith('/icon/')) {
+    // Specific handling for /icon/ requests
     event.respondWith(
       caches.match(event.request).then((cachedResponse) => {
         return cachedResponse || fetch(event.request).then((networkResponse) => {
@@ -45,20 +48,20 @@ self.addEventListener('fetch', (event) => {
       })
     );
   } else {
-  event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      // Serve the cached response if it's found
-      const fetchPromise = fetch(event.request).then((networkResponse) => {
-        // Update the cache with the new response
-        return caches.open(CACHE_NAME).then((cache) => {
-          cache.put(event.request, networkResponse.clone());
-          return networkResponse;
+    // General caching for other requests
+    event.respondWith(
+      caches.match(event.request).then((cachedResponse) => {
+        // Fetch and cache the request in the background
+        const fetchPromise = fetch(event.request).then((networkResponse) => {
+          return caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, networkResponse.clone());
+            return networkResponse;
+          });
         });
-      });
-      // Return the cached response immediately, but update the cache in the background
-      return cachedResponse || fetchPromise;
-    })
-  );
+        // Return cached response or wait for fetch to complete
+        return cachedResponse || fetchPromise;
+      })
+    );
   }
 });
 

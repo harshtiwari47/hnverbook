@@ -36,11 +36,13 @@ app.use(express.urlencoded({
    extended: false
 }));
 app.use(cookieParser());
+
 app.use(express.static(path.join(__dirname, 'public'), {
-   maxAge: '30d', // Cache files for 7 days
-  etag: true,    // ETag headers
-  lastModified: true, // Last-Modified headers
+  maxAge: '1h', // Cache static files for 1 hour
+  etag: true,   // Enable ETag headers
+  lastModified: true, // Enable Last-Modified headers
 }));
+
 app.use((err, req, res, next) => {
    handleError(err, res);
 });

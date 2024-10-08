@@ -15,7 +15,6 @@ const urlsToCache = [
   '/stylesheets/posts/blip.css',
   '/stylesheets/settings/index.css',
   '/stylesheets/settings/account.css',
-  '/scripts/index.js',
   '/scripts/'
 ];
 
